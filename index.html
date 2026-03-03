@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrea Büfé – Névjegykártya</title>
+
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --card:#111;
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.72);
+      --line:rgba(255,255,255,.10);
+      --accent:#ff4a2f; /* passzol a logó narancs-pirosához */
+      --radius:22px;
+      --shadow: 0 22px 70px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100svh;
+      display:grid;
+      place-items:center;
+      padding:24px;
+      background:
+        radial-gradient(900px 500px at 50% 10%, rgba(255,74,47,.10), transparent 55%),
+        linear-gradient(180deg, #050505, #0a0a0a 35%, #050505);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .wrap{
+      width:min(560px, 100%);
+      display:grid;
+      gap:14px;
+    }
+
+    .card{
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    /* KÉP BLOKK (a te képed lesz az alap) */
+    .hero{
+      position:relative;
+      padding:18px;
+      display:grid;
+      place-items:center;
+      background: rgba(0,0,0,.25);
+    }
+    .hero img{
+      width:100%;
+      max-width:520px;
+      height:auto;
+      display:block;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background:#0a0a0a;
+    }
+
+    /* IKON SOR (a kép alatt) */
+    .links{
+      padding:16px 16px 18px;
+      border-top:1px solid var(--line);
+      background: rgba(0,0,0,.25);
+    }
+    .links .title{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin:0 0 12px;
+      text-align:center;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      text-decoration:none;
+      transition:.18s ease;
+      min-height:52px;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,74,47,.45);
+      background: rgba(255,74,47,.10);
+    }
+
+    .ico{
+      width:34px; height:34px;
+      display:grid; place-items:center;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.35);
+      flex:0 0 auto;
+    }
+    .ico svg{width:18px;height:18px}
+    .label{
+      display:flex; flex-direction:column; gap:2px;
+      min-width:0;
+    }
+    .label b{
+      font-size:13px;
+      letter-spacing:.02em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .label span{
+      font-size:11px;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .note{
+      text-align:center;
+      font-size:12px;
+      color:rgba(255,255,255,.55);
+      margin-top:4px;
+    }
+
+    @media (max-width: 460px){
+      .grid{grid-template-columns: repeat(2, 1fr);}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="card">
+      <div class="hero">
+        <!-- ✅ IDE TEDD A KÉPED (most a fájlnév példa) -->
+        <!-- Ha a képet a HTML mellé teszed, pl. "andrea-bufe.jpg", akkor: src="andrea-bufe.jpg" -->
+        <img src="qrfőoldal.JPG" alt="Andrea Büfé" />
+      </div>
+
+      <div class="links">
+        <p class="title">Elérhetőségek</p>
+
+        <div class="grid">
+          <!-- =========================
+               ✅ LINK HELYEK (cseréld!)
+               ========================= -->
+
+          <!-- Instagram -->
+          <a class="btn" href="PASTE_INSTAGRAM_LINK_HERE" target="_blank" rel="noopener">
+            <div class="ico" aria-hidden="true">
+              <!-- Instagram icon (inline SVG) -->
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7.5 3.5h9A4 4 0 0 1 20.5 7.5v9a4 4 0 0 1-4 4h-9a4 4 0 0 1-4-4v-9a4 4 0 0 1 4-4Z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M17.2 6.9h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="label">
+              <b>Instagram</b>
+              <span>@andrea_bufe</span>
+            </div>
+          </a>
+
+          <!-- Telefon -->
+          <a class="btn" href="tel:+40123456789">
+            <div class="ico" aria-hidden="true">
+              <!-- Phone icon -->
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M8.5 3.8h2.1c.7 0 1.3.5 1.4 1.2l.4 2c.1.6-.2 1.1-.7 1.4l-1.3.8a14 14 0 0 0 5.8 5.8l.8-1.3c.3-.5.9-.8 1.4-.7l2 .4c.7.1 1.2.7 1.2 1.4v2.1c0 .8-.6 1.4-1.4 1.5C11.8 20.5 3.5 12.2 5.1 5.2c.1-.8.7-1.4 1.5-1.4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="label">
+              <b>Telefon</b>
+              <span>+40 123 456 789</span>
+            </div>
+          </a>
+
+          <!-- Facebook -->
+          <a class="btn" href="PASTE_FACEBOOK_LINK_HERE" target="_blank" rel="noopener">
+            <div class="ico" aria-hidden="true">
+              <!-- Facebook icon -->
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M14 8.2V6.7c0-.7.4-1.2 1.2-1.2H17V3h-2.2C12.8 3 12 4.2 12 6.2v2H10v2.6h2V21h2.7V10.8H17l.5-2.6h-2.8Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="label">
+              <b>Facebook</b>
+              <span>/AndreaBufe</span>
+            </div>
+          </a>
+
+          <!-- Miniweb (saját oldal) -->
+          <a class="btn" href="PASTE_MINIWEB_LINK_HERE" target="_blank" rel="noopener">
+            <div class="ico" aria-hidden="true">
+              <!-- Globe icon -->
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M3.5 12h17" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M12 3c2.7 2.7 2.7 15.3 0 18" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+            </div>
+            <div class="label">
+              <b>Miniweb</b>
+              <span>andrea-bufe.ro</span>
+            </div>
+          </a>
+
+          <!-- TikTok -->
+          <a class="btn" href="PASTE_TIKTOK_LINK_HERE" target="_blank" rel="noopener">
+            <div class="ico" aria-hidden="true">
+              <!-- TikTok-ish note icon -->
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M14 4v11.2a3.6 3.6 0 1 1-3-3.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M14 4c.7 2.7 2.4 4.4 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="label">
+              <b>TikTok</b>
+              <span>@andrea_bufe</span>
+            </div>
+          </a>
+
+          <!-- Helyszín -->
+          <a class="btn" href="PASTE_GOOGLE_MAPS_LINK_HERE" target="_blank" rel="noopener">
+            <div class="ico" aria-hidden="true">
+              <!-- Location icon -->
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M12 12.2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+            </div>
+            <div class="label">
+              <b>Helyszín</b>
+              <span>Kattints a térképhez</span>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="note">
+          Tipp: a fenti <b>PASTE_..._LINK_HERE</b> részeket cseréld ki a saját linkjeidre.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
